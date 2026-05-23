@@ -1,30 +1,39 @@
 import streamlit as st
 import pickle
 
+# Load models
 kmeans = pickle.load(open("kmeans_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 pca = pickle.load(open("pca_model.pkl", "rb"))
 
+# Title
 st.title("Customer Segmentation App")
 
+# Inputs
 income = st.number_input("Income")
 spending = st.number_input("Spending Score")
 
+# Predict button
 if st.button("Predict Segment"):
 
+    # Input data
     data = [[income, spending]]
 
+    # Scale data
     scaled = scaler.transform(data)
 
+    # PCA transform
     reduced = pca.transform(scaled)
 
+    # Predict cluster
     prediction = kmeans.predict(reduced)
 
-segment_names = {
-    0: "Budget Customer",
-    1: "Premium Customer",
-    2: "Regular Customer"
-}
+    # Cluster names
+    segment_names = {
+        0: "Budget Customer",
+        1: "Premium Customer",
+        2: "Regular Customer"
+    }
 
-
-st.success(f"Customer Segment: {segment_names[prediction[0]]}")
+    # Show result
+    st.success(f"Customer Segment: {segment_names[prediction[0]]}")
