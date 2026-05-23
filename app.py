@@ -20,4 +20,12 @@ if st.button("Predict Segment"):
 
     prediction = kmeans.predict(reduced)
 
-    st.success(f"Customer Segment: {prediction[0]}")
+segment_names = {
+    0: "Budget Customer",
+    1: "Premium Customer",
+    2: "Regular Customer"
+}
+
+st.success(f"Customer Segment: {segment_names[prediction[0]]}")
+
+st.success(f"Customer Segment: {segment_names[prediction[0]]}")
