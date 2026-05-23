@@ -11,14 +11,17 @@ st.title("Customer Segmentation App")
 
 # Inputs
 income = st.number_input("Income")
-spending = st.number_input("Spending Score")
+spending = st.number_input("Total Spending")
+children = st.number_input("Children")
+tenure = st.number_input("Tenure Days")
+webvisits = st.number_input("Web Visits Per Month")
+education = st.number_input("Education (Encoded Number)")
 
 # Predict button
 if st.button("Predict Segment"):
 
     # Input data
-    data = [[income, spending]]
-
+    data = [[income, spending, children, tenure, webvisits, education]]
     # Scale data
     scaled = scaler.transform(data)
 
