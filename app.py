@@ -26,6 +26,5 @@ segment_names = {
     2: "Regular Customer"
 }
 
-st.success(f"Customer Segment: {segment_names[prediction[0]]}")
 
 st.success(f"Customer Segment: {segment_names[prediction[0]]}")
