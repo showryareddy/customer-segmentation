@@ -4,7 +4,7 @@ import pickle
 # Load models
 kmeans = pickle.load(open("kmeans_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
-pca = pickle.load(open("pca_model.pkl", "rb"))
+pca = pickle.load(open("pcagp_model.pkl", "rb"))
 
 # Title
 st.title("Customer Segmentation App")
