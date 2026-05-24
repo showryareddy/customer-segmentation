@@ -35,7 +35,8 @@ if st.button("Predict Segment"):
     segment_names = {
         0: "Budget Customer",
         1: "Premium Customer",
-        2: "Regular Customer"
+        2: "Regular Customer",
+        3: "VIP Customer"
     }
 
     # Show result
